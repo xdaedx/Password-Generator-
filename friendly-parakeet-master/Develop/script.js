@@ -35,8 +35,37 @@ var writePassword = function() {
         window.alert("Your password length is invalid, please try again.");
         return writePassword();
       }
-      
     }
+}
+
+// Password selection for the writePassword
+var generatePassword = function(passwordLength, lowerCases, upperCases, numbers, symbols) {
+  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var number = "0123456789";
+  var symbol = " @&!$-:.*)(][+#;<=^_`{>?|'|/~";
+  var passwordContainer;
+  var passwordValue = "";
+
+  if (lowerCases) {
+    passwordContainer = lowerCase;
+  }
+  if (upperCases) {
+    passwordContainer += upperCase;
+  }
+  if (numbers) {
+    passwordContainer += number;
+  }
+  if (symbols) {
+    passwordContainer += symbol;
+  }
+
+  for (var i = 0, x = passwordContainer.length; i < passwordLength; i++) {
+    passwordValue += passwordContainer.charAt(Math.floor(Math.random() * x));
+  }
+
+  document.querySelector("#password").innerHTML = passwordValue;
+
 }
 
 // Add event listener to generate button

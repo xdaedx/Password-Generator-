@@ -27,6 +27,15 @@ var writePassword = function() {
       if (symbolConfirm) {
         var symbols = true;
       }
+
+      // One of these options needs to be selected
+      if (lowerCases || upperCases || numbers || symbols) {
+        generatePassword(passwordLength, lowerCases, upperCases, numbers, symbols);
+      } else {
+        window.alert("Your password length is invalid, please try again.");
+        return writePassword();
+      }
+      
     }
 }
 

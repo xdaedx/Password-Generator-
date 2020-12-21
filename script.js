@@ -7,7 +7,7 @@ var writePassword = function() {
   var selections = lowerCases + upperCases + numbers + symbols;
   var passwordLength = window.prompt("How long would you like your password to be? Please type in a number between 8 and 128.");
 
-    if (passwordLength >= 8 && passwordLenth <= 128) {
+    if (passwordLength >= 8 && passwordLength <= 128) {
       var lowerCaseConfirm = window.confirm("Do you want your password to contain lower case letters? 'Ok' for YES, 'Cancel' for NO.");
       if (lowerCaseConfirm) {
         var lowerCases = true;
